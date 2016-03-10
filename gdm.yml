@@ -1,0 +1,6 @@
+location: .gdm
+sources:
+- repo: https://github.com/mrpossoms/linmath.h
+  dir: linmath
+  rev: master
+  link: ./src/linmath
