@@ -1,4 +1,5 @@
 #include "gfxSprite.h"
+#include "gfxBuffer.h"
 
 using namespace gfx;
 
