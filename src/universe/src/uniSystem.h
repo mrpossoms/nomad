@@ -13,11 +13,11 @@ public:
 	System(const char* path);
 	~System();
 
-	//    __  __     _   _            _    
+	//    __  __     _   _            _
 	//   |  \/  |___| |_| |_  ___  __| |___
 	//   | |\/| / -_)  _| ' \/ _ \/ _` (_-<
 	//   |_|  |_\___|\__|_||_\___/\__,_/__/
-	//                                     		
+	//
 	float getMass();
 	float getRadius();
 
@@ -34,17 +34,25 @@ public:
 		}
 	};
 
-	//    ___                       _   _  
+	int loadObjectsAt(vec3 position);
+	int saveObjects();
+
+	//    ___                       _   _
 	//   | _ \_ _ ___ _ __  ___ _ _| |_(_)___ ___
-	//   |  _/ '_/ _ \ '_ \/ -_) '_|  _| / -_|_-< 
-	//   |_| |_| \___/ .__/\___|_|  \__|_\___/__/  
-	//               |_|                        		
+	//   |  _/ '_/ _ \ '_ \/ -_) '_|  _| / -_|_-<
+	//   |_| |_| \___/ .__/\___|_|  \__|_\___/__/
+	//               |_|
 	vector<System*>  subSystems;
 	vector<Object_t*> objects;
 
-	char name[64];
+	char sysPath[MAXPATHLEN];
+	uint8_t  name[64];
+	uint8_t  hash[UUID_LEN];
+	uint16_t scaleDivisor; // position scale divisor in KM
 
 private:
+	void hashAt(vec3 position, char hash[17]);
+
 	vec3  centerOfMass;
 	float radius;
 };

@@ -19,6 +19,11 @@ struct Object_t : Storable_t{
 	vec3  velocity; // measured in Km/s
 	float mass;     // measured in Kg
 	float speed;    // storage value for velo mag
+	
+	struct props {
+		uint16_t type;
+		uint16_t flags;
+	};
 
 	//    __  __     _   _            _    
 	//   |  \/  |___| |_| |_  ___  __| |___
