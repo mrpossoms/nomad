@@ -20,3 +20,14 @@ Buffer_t BufferAlloc(int width, int height)
 
 	return buf;
 }
+//-------------------------------------------------------------------------
+void BufferFree(Buffer_t* buf)
+{
+	if(!buf) return;
+
+	for(int i = width; i--;){
+		free(buf.data[i]);
+	}
+
+	free(buf.data);
+}

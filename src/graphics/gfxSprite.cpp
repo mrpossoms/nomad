@@ -1,6 +1,8 @@
 #include "gfxSprite.h"
 #include "gfxBuffer.h"
 
+#include <ncurses.h>
+
 using namespace gfx;
 
 Sprite::Sprite(int art_fd)
@@ -48,5 +50,6 @@ Sprite::Sprite(char* buf[], int w, int h)
 
 int Sprite::draw(mat3x3 T)
 {
+
 	return 0;
 }

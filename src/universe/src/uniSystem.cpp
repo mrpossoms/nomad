@@ -142,7 +142,7 @@ int System::saveObjects()
 
 		sprintf(objFilePath, "%s/%16s", locHash, objects[i]->hash);
 		int fd = open(objFilePath, O_CREAT | O_TRUNC | O_WRONLY, 0666);
-		::write(fd, objects[i], sizeof(Object_t));
+		objects[i]->write(fd);
 		close(fd);
 
 		++savedObjects;

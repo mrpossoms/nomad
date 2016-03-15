@@ -20,9 +20,14 @@ struct Object_t : Storable_t{
 	float mass;     // measured in Kg
 	float speed;    // storage value for velo mag
 	
-	struct props {
-		uint16_t type;
-		uint16_t flags;
+	union P {
+		struct {
+
+		} planet;
+		struct {
+
+		} station;
+		uint8_t pad[];
 	};
 
 	//    __  __     _   _            _    

@@ -51,5 +51,11 @@ namespace gfx {
 
 	extern Buffer_t CUR_BUF;
 
-	Buffer_t BufferAlloc(int width, int height);
+	//    ___             _   _             
+	//   | __|  _ _ _  __| |_(_)___ _ _  ___
+	//   | _| || | ' \/ _|  _| / _ \ ' \(_-<
+	//   |_| \_,_|_||_\__|\__|_\___/_||_/__/
+	//                                      
+	static Buffer_t BufferAlloc(int width, int height);
+	static void     BufferFree(Buffer_t*);
 }
